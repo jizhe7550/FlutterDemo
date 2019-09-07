@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/widgets/my_drawer.dart';
 import 'package:flutter_demo/widgets/navigation_icon_view.dart';
 
 import 'constant/constant.dart' show AppColors;
@@ -9,7 +10,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _appBarTitle = ['News', 'Log', 'Find', 'Profile'];
+  final _appBarTitle = ['News', 'Tweets', 'Find', 'Profile'];
   List<NavigationIconView> _navigationIconViews;
   var _currentIndex = 0;
   List<Widget> _pages;
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
           iconPath: 'assets/images/ic_nav_news_normal.png',
           activeIconPath: 'assets/images/ic_nav_news_actived.png'),
       NavigationIconView(
-          title: 'Twitter',
+          title: 'Tweets',
           iconPath: 'assets/images/ic_nav_tweet_normal.png',
           activeIconPath: 'assets/images/ic_nav_tweet_actived.png'),
       NavigationIconView(
@@ -81,7 +82,10 @@ class _HomePageState extends State<HomePage> {
               duration: Duration(milliseconds: 1), curve: Curves.ease);
         },
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(
+          headImagePath: 'assets/images/cover_img.jpg',
+          menuTitles: ['Publish tweet', 'Tweet room', 'About', 'Settings'],
+          menuIcons: [Icons.send, Icons.home, Icons.error, Icons.settings]),
     );
   }
 }
