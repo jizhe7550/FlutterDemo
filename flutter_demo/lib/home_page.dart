@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/pages/discovery_page.dart';
+import 'package:flutter_demo/pages/news_list_page.dart';
+import 'package:flutter_demo/pages/profile_page.dart';
+import 'package:flutter_demo/pages/tweet_page.dart';
 import 'package:flutter_demo/widgets/my_drawer.dart';
 import 'package:flutter_demo/widgets/navigation_icon_view.dart';
 
@@ -10,7 +14,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final _appBarTitle = ['News', 'Tweets', 'Find', 'Profile'];
+  final _appBarTitle = ['News', 'Tweets', 'Discovery', 'Profile'];
   List<NavigationIconView> _navigationIconViews;
   var _currentIndex = 0;
   List<Widget> _pages;
@@ -21,29 +25,24 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     _navigationIconViews = [
       NavigationIconView(
-          title: 'News',
+          title: _appBarTitle[0],
           iconPath: 'assets/images/ic_nav_news_normal.png',
           activeIconPath: 'assets/images/ic_nav_news_actived.png'),
       NavigationIconView(
-          title: 'Tweets',
+          title: _appBarTitle[1],
           iconPath: 'assets/images/ic_nav_tweet_normal.png',
           activeIconPath: 'assets/images/ic_nav_tweet_actived.png'),
       NavigationIconView(
-          title: 'Find',
+          title: _appBarTitle[2],
           iconPath: 'assets/images/ic_nav_discover_normal.png',
           activeIconPath: 'assets/images/ic_nav_discover_actived.png'),
       NavigationIconView(
-          title: 'Profile',
+          title: _appBarTitle[3],
           iconPath: 'assets/images/ic_nav_my_normal.png',
           activeIconPath: 'assets/images/ic_nav_my_pressed.png'),
     ];
 
-    _pages = [
-      Container(color: Color(0xffff0000)),
-      Container(color: Color(0xffffda00)),
-      Container(color: Color(0xffff0fe0)),
-      Container(color: Color(0xffff430a))
-    ];
+    _pages = [NewsListPage(), TweetPage(), DiscoveryPage(), ProfilePage()];
 
     _pageController = PageController(initialPage: _currentIndex);
   }

@@ -8,6 +8,10 @@ class PublishTweetPage extends StatefulWidget {
 class _PublishTweetPageState extends State<PublishTweetPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Publish Tweet'),
+      ),
+    );
   }
 }

@@ -9,6 +9,10 @@ class TweetPage extends StatefulWidget {
 class _TweetPageState extends State<TweetPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tweet'),
+      ),
+    );
   }
 }

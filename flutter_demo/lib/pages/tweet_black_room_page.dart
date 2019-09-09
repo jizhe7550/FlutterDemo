@@ -8,6 +8,10 @@ class TweetBlackRoomPage extends StatefulWidget {
 class _TweetBlackRoomPageState extends State<TweetBlackRoomPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Tweet Black Room'),
+      ),
+    );
   }
 }
